@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Home from './common/component/Home'
+import AtricleList from './board/component/ArticleList'
 import reportWebVitals from './reportWebVitals';
+import UserDetail from './user/component/UserDetail'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <UserDetail />,
   document.getElementById('root')
 );
 
