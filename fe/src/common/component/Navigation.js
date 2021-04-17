@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navigation = () => {
 
@@ -18,8 +19,8 @@ const Navigation = () => {
                         <ul className="nav navbar-nav navbar-right">
                             <li><a href="#">Login</a></li>
                             <li><a href="#">WHAT</a></li>
-                            <li><a href="#">WHERE</a></li>
-                            <li><a href="#">Board</a></li>
+                            <li><Link to='/article/seoul-cctv'>서울시 유동 인구</Link></li>
+                            <li><Link to='/board/news'>News</Link></li>
                         </ul>
                     </div>
                 </div>

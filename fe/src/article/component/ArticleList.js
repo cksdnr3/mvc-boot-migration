@@ -1,6 +1,6 @@
 import React from 'react'
-import '../../common/style/Common.css'
-import '../style/ArticleList.css'
+import 'common/style/Common.css'
+import 'article/style/ArticleList.css'
 
 const AtricleList = () => {
 
@@ -8,7 +8,7 @@ const AtricleList = () => {
         <>
 <h2>HTML Table</h2>
 
-<table>
+<table className="article">
   <tr>
     <th>Company</th>
     <th>Contact</th>

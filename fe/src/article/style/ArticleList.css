@@ -1,16 +1,15 @@
-table {
+.article_list table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
     color: black;
 }
   
-  td, th {
+.article_list td, th {
     border: 1px solid #dddddd;
-    text-align: left;
     padding: 8px;
 }
   
-  tr:nth-child(even) {
+.article_list tr:nth-child(even) {
     background-color: #dddddd;
 }

@@ -1,12 +1,10 @@
 import React from 'react'
 import Footer from './Footer'
-import Navigation from './Navigation'
-import '../style/Home.css'
-import '../style/Common.css'
+import Navigation from 'common/component/Navigation'
+import 'common/style/Home.css'
+import 'common/style/Common.css'
 
 const Home = () => {
-
-
     return (
         <>
             <Navigation/>
@@ -50,6 +48,5 @@ const Home = () => {
         </>
     )
 }
-
 
 export default Home

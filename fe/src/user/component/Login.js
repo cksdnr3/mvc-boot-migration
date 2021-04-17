@@ -1,5 +1,6 @@
-import React from 'react';
-import './style/LoginCss.css'
+import React from 'react'
+import 'user/style/Login.css'
+
 const LoginForm = () => {
     return (<> 
 <form action="action_page.php" method="post">
