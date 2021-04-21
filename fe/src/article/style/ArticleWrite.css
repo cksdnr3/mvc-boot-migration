@@ -1,16 +1,16 @@
-table {
+.article table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
     color: #000;
 }
-td, th {
+.article td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 
 }
-tr:nth-child(even) {
+.article tr:nth-child(even) {
     background-color: #dddddd;
 }
 .basic-btn {
@@ -23,10 +23,10 @@ tr:nth-child(even) {
     display: inline-block;
     font-size: 16px;
 }
-.article_write textarea {
+.article textarea {
     width: 1000px;
     height: 500px;
 }
-.article_write input {
+.article input {
     width: 1000px;
 }

@@ -23,6 +23,7 @@ const Navigation = () => {
                             <li><Link to='/board/news'>News</Link></li>
                             <li><Link to='/counter/counter'>Counter</Link></li>
                             <li><Link to='/counter/redux-counter'>ReduxCounter</Link></li>
+                            <li><Link to='/todos/todo-app'>할 일 목록</Link></li>
                         </ul>
                     </div>
                 </div>

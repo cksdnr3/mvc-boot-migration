@@ -6,6 +6,7 @@ import { Counter, ReduxCounter } from 'counter/index'
 
 import 'App.css';
 import { Route } from 'react-router-dom'
+import { Todo, TodoApp, Todos } from 'todos'
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
       <Route exact path='/article/article-update' component={ ArticleUpdate } />
       <Route exact path='/article/seoul-cctv' component={ SeoulCCTV } />
 
-      <Route exact path='/board/news' component={ News } />/
+      <Route exact path='/board/news' component={ News } />
 
       <Route exact path='/counter/counter' component={ Counter } />
       <Route exact path='/counter/redux-counter' component={ ReduxCounter } />
@@ -26,6 +27,10 @@ const App = () => {
       <Route exact path='/user/login' component={Login} />
       <Route exact path='/user/signup' component={Signup} />
       <Route exact path='/user/user-detail' component={UserDetail} />
+
+      <Route exact path='/todos/todo' component={ Todo } />
+      <Route exact path='/todos/todos' component={ Todos } />
+      <Route exact path='/todos/todo-app' component={ TodoApp } />
     </div>
   );
 }

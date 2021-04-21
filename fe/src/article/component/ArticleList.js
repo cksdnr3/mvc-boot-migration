@@ -6,9 +6,10 @@ const AtricleList = () => {
 
     return (
         <>
+        <div className="article_list">
 <h2>HTML Table</h2>
 
-<table className="article">
+<table>
   <tr>
     <th>Company</th>
     <th>Contact</th>
@@ -45,6 +46,7 @@ const AtricleList = () => {
     <td>Italy</td>
   </tr>
 </table>
+</div>
         </>
     )
 }

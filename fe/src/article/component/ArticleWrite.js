@@ -3,6 +3,7 @@ import '../style/ArticleWrite.css';
 const ArticleWrite = () => {
     return (
         <>
+        <div className="article">
             <h2>글쓰기</h2>
             <form>
                 <table>
@@ -31,6 +32,7 @@ const ArticleWrite = () => {
                     </tr>
                 </table>
             </form>
+        </div>   
         </>
     );
 };
