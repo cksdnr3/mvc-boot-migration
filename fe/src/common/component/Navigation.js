@@ -21,8 +21,8 @@ const Navigation = () => {
                             <li><a href="#">WHAT</a></li>
                             <li><Link to='/article/seoul-cctv'>서울시 유동 인구</Link></li>
                             <li><Link to='/board/news'>News</Link></li>
-                            <li><Link to='/board/counter'>Counter</Link></li>
-                            <li><Link to='/board/redux-counter'>ReduxCounter</Link></li>
+                            <li><Link to='/counter/counter'>Counter</Link></li>
+                            <li><Link to='/counter/redux-counter'>ReduxCounter</Link></li>
                         </ul>
                     </div>
                 </div>
