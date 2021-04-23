@@ -1,15 +1,16 @@
-import Footer from 'common/component/Footer'
-import Navigation from 'common/component/Navigation'
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { Todo } from 'todos/index'
 
 const Todos = () => {
+    const todos = useSelector(state => state.todosReducer.todos)
 
     return (
         <>
-        <Navigation />
-        <h1>할 일 목록</h1>
-        <div></div>
-        <Footer />
+            <h3>Todo</h3>
+            <ul id="incompconste-tasks">
+                {todos.map((todo) => <Todo todo={todo}/>)}
+            </ul>
         </>
     )
 }

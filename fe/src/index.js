@@ -6,11 +6,17 @@ import reportWebVitals from 'reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 // import store from 'app/store'
 import { Provider } from 'react-redux'
-import { createStore, combineReducers } from 'redux'
+import { combineReducers } from 'redux'
+import { configureStore } from '@reduxjs/toolkit';
+import todosReducer from 'todos/reducer/todos.reducer'
 
-const rootReducer = combineReducers({})
+const rootReducer = combineReducers({
+  todosReducer
+})
 
-const store = createStore(rootReducer)
+const store = configureStore({
+  reducer: rootReducer
+})
 
 ReactDOM.render((
   <Provider store={store}>

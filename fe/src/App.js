@@ -6,7 +6,7 @@ import { Counter, ReduxCounter } from 'counter/index'
 
 import 'App.css';
 import { Route } from 'react-router-dom'
-import { Todo, TodoApp, Todos } from 'todos'
+import { Todo, TodosApp, Todos } from 'todos'
 
 const App = () => {
   return (
@@ -30,7 +30,7 @@ const App = () => {
 
       <Route exact path='/todos/todo' component={ Todo } />
       <Route exact path='/todos/todos' component={ Todos } />
-      <Route exact path='/todos/todo-app' component={ TodoApp } />
+      <Route exact path='/todos/todo-app' component={ TodosApp } />
     </div>
   );
 }
