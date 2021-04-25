@@ -1,4 +1,4 @@
-package com.example.api.user;
+package com.example.api.user.domain;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

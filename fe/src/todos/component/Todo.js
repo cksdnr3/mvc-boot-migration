@@ -1,16 +1,14 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { removeTodo } from 'todos/reducer/todos.slice'
 
 const Todo = ({todo}) => {
+    const dispatch = useDispatch()
 
     return (
         <>
-            <li key={todo.id}>
-                <input type="checkbox" />
-                <label>{todo.text}</label>
-                <input type="text" />
-                <button className="edit">Edit</button>
-                <button className="deconste">Deconste</button>
-            </li>
+        <h1>todo detail</h1>
         </>
     )
 }

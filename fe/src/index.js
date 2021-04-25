@@ -4,11 +4,10 @@ import 'index.css';
 import App from 'App';
 import reportWebVitals from 'reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-// import store from 'app/store'
 import { Provider } from 'react-redux'
 import { combineReducers } from 'redux'
 import { configureStore } from '@reduxjs/toolkit';
-import todosReducer from 'todos/reducer/todos.reducer'
+import todosReducer from 'todos/reducer/todos.slice'
 
 const rootReducer = combineReducers({
   todosReducer

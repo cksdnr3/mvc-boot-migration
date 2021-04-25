@@ -1,9 +1,8 @@
 import Home from 'common/component/Home'
 import {ArticleList, ArticleWrite, ArticleDetail, ArticleUpdate} from 'article/index'
-import {Login, Signup, UserDetail} from 'user/index'
 import {News, SeoulCCTV } from 'board/index'
 import { Counter, ReduxCounter } from 'counter/index'
-
+import { Login, MyPage, Signup} from 'uss/index'
 import 'App.css';
 import { Route } from 'react-router-dom'
 import { Todo, TodosApp, Todos } from 'todos'
@@ -26,7 +25,7 @@ const App = () => {
 
       <Route exact path='/user/login' component={Login} />
       <Route exact path='/user/signup' component={Signup} />
-      <Route exact path='/user/user-detail' component={UserDetail} />
+      <Route exact path='/user/Mypage' component={MyPage} />
 
       <Route exact path='/todos/todo' component={ Todo } />
       <Route exact path='/todos/todos' component={ Todos } />
