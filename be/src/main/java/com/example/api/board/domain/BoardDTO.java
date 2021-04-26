@@ -1,14 +1,14 @@
-package com.example.api.board;
+package com.example.api.board.domain;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
+@Data
 @Component
-public class BoardDto {
+public class BoardDTO {
     private long boardId;
-    private String writer;
-    private String email;
-    private String subject;
+    private String title;
     private String content;
+    private String username;
     private String regDate;
 }
