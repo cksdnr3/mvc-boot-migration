@@ -1,15 +1,15 @@
-package com.example.api.stock.domain;
+package com.example.api.item.domain;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "stocks")
-public class Stock {
+@Table(name = "items")
+public class Item {
 
     @Id
     @GeneratedValue
-    @Column(name = "stock_id")
-    private long stockId;
+    @Column(name = "item_id")
+    private long itemId;
 
     @Column(name = "item_brand")
     public String itemBrand;

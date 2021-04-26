@@ -7,7 +7,7 @@ import javax.persistence.Column;
 
 @Data
 @Component
-public class AuctionDto {
+public class AuctionDTO {
     private long auctionId;
     private String regDate;
     private String winBid;
