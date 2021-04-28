@@ -65,9 +65,9 @@ public class StreamMain {
             System.out.println("메뉴: 0.EXIT 1.학년 오름차순 2.성적 내림차순 3.이름 오름차순 4.ID 오름차순");
             switch (scanner.nextInt()) {
                 case 0: return;
-                case 1: ascGrade().forEach(el -> System.out.println("@@ascGrade@@" + el.toString())); break;
-                case 2: descScore().forEach(el -> System.out.println("**ascScore()**" + el.toString())); break;
-                case 3: ascName().forEach(el -> System.out.println("##ascName()##" + el.toString())); break;
+                case 1: ascGrade().forEach(System.out::println); break;
+                case 2: descScore().forEach(System.out::println); break;
+                case 3: ascName().forEach(System.out::println); break;
                 case 4: ascUsername().forEach(System.out::println); break;
                 default: break;
             }
@@ -81,11 +81,11 @@ public class StreamMain {
     }
 
     public static Stream<Student> ascGrade() {
-        return makeStream().sorted(Comparator.comparing(Student::getGrade));
+        return makeStream().sorted((prev, current) -> prev.getGrade() - current.getGrade());
     }
 
     public static Stream<Student> ascName() {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            return makeStream().sorted(Comparator.comparing(Student::getName));
+        return makeStream().sorted(Comparator.comparing(Student::getName));
     }
 
     public static Stream<Student> descScore() {
