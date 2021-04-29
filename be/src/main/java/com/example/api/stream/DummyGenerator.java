@@ -1,6 +1,5 @@
 package com.example.api.stream;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -61,8 +60,13 @@ public class DummyGenerator {
     public String makeUsername() {
         List<String> id = Arrays.asList("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split(""));
         shuffle(id);
-        id.subList(0, 4);
-        return id.get(0);
+        StringBuffer sb = new StringBuffer();
+
+        for (int i = 0; i < 4; i++) {
+            sb.append(id.get(i));
+        }
+
+        return sb.toString();
     }
 
     public String makeEmail() {

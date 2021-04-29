@@ -2,7 +2,7 @@ import Home from 'common/component/Home'
 import {ArticleList, ArticleWrite, ArticleDetail, ArticleUpdate} from 'article/index'
 import {News, SeoulCCTV } from 'board/index'
 import { Counter, ReduxCounter } from 'counter/index'
-import { Login, MyPage, Signup} from 'uss/index'
+import { Login, MyPage, Signup} from 'users/index'
 import 'App.css';
 import { Route } from 'react-router-dom'
 import { Todo, TodosApp, Todos } from 'todos'

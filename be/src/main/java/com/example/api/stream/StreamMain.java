@@ -1,10 +1,7 @@
 package com.example.api.stream;
 
 import java.util.Comparator;
-import java.util.Locale;
 import java.util.Scanner;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 class Student implements Comparable<Student> {
@@ -53,6 +50,7 @@ class Student implements Comparable<Student> {
 
     @Override
     public int compareTo(Student s) {
+
         return 0;
     }
 }
@@ -77,25 +75,31 @@ public class StreamMain {
     public static Stream<Student> makeStream() {
         DummyGenerator dg = new DummyGenerator();
 
-        return dg.makeStudentList(10).stream();
+        return dg.makeStudentList(10)
+                .stream();
     }
 
     public static Stream<Student> ascGrade() {
-        return makeStream().sorted((prev, current) -> prev.getGrade() - current.getGrade());
+        return makeStream()
+                .sorted((prev, current) -> prev.getGrade() - current.getGrade());
     }
 
     public static Stream<Student> ascName() {
-        return makeStream().sorted(Comparator.comparing(Student::getName));
+        return makeStream()
+                .sorted(Comparator.comparing(Student::getName));
     }
 
     public static Stream<Student> descScore() {
-        return makeStream().sorted(Comparator.comparing(Student::getScore).reversed());
+        return makeStream()
+                .sorted(Comparator.comparing(Student::getScore).reversed());
     }
 
     public static Stream<Student> ascUsername() {
-        return makeStream().map(student -> {
-            student.setUsername(student.getUsername().toLowerCase());
-            return student;
-        }).sorted(Comparator.comparing(Student::getUsername));
+        return makeStream()
+                .map(student -> {
+                    student.setUsername(student.getUsername().toLowerCase());
+                    return student;
+                })
+                .sorted(Comparator.comparing(Student::getUsername));
     }
 }
