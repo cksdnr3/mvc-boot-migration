@@ -1,4 +1,4 @@
-package com.example.api.bug.service;
+package com.example.api.bugs.service;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;

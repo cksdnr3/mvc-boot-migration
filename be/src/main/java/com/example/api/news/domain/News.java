@@ -1,6 +1,7 @@
 package com.example.api.news.domain;
 
 import lombok.Builder;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,25 +13,18 @@ import javax.persistence.*;
 public class News {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "news_id")
-    private Long newsId;
+    @Column(name = "news_id") private Long newsId;
 
-    @Column(length = 20, nullable = false)
-    private String newsNo;
+    @Column(length = 20) private String category;
 
-    @Column(length = 20, nullable = false)
-    private String category;
+    @Column(length = 512) private String title;
 
-    @Column(length = 512, nullable = false)
-    private String title;
-
-    @Column(length = 1024, nullable = false)
-    private String address;
+    @Column(length = 1024) private String address;
 
     @Builder
-    public News(String newsNo, String category,
+    public News(Long newsId, String category,
                 String title, String address) {
-        this.newsNo = newsNo;
+        this.newsId = newsId;
         this.address = address;
         this.category = category;
         this.title = title;

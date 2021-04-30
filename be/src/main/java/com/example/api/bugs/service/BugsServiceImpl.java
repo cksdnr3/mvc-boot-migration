@@ -1,7 +1,7 @@
-package com.example.api.bug.service;
+package com.example.api.bugs.service;
 
-import com.example.api.bug.domain.Bugs;
-import com.example.api.bug.repository.BugsRepository;
+import com.example.api.bugs.domain.Bugs;
+import com.example.api.bugs.repository.BugsRepository;
 import com.example.api.common.service.AbstractService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
@@ -46,7 +46,9 @@ public class BugsServiceImpl extends AbstractService<Bugs> implements BugsServic
 
             bugs.setMusicNo(String.valueOf(repo.findAll().size() + 1));
             bugs.setRank(rank.get(i).text());
-            bugs.setTitle(title.get(i).attr("href"));
+            bugs.setTitle(title.get(i).text());
+            bugs.setArtist(artist.get(i).text());
+            bugs.setAlbum(album.get(i).text());
             log.info(bugs.toString());
         }
 
@@ -63,11 +65,8 @@ public class BugsServiceImpl extends AbstractService<Bugs> implements BugsServic
         Elements artistElem = document.select("div#CHARTrealtime>table>tbody>tr>td>p.artist>a");
         Elements albumElem = document.select("div#CHARTrealtime>table>tbody>tr>td>a.album");
 
-        log.info(rankingElem.toString());
-
         saveAll(rankingElem, titleElem, artistElem, albumElem);
     }
-
 
     @Override
     public Long save(Bugs bugs) {

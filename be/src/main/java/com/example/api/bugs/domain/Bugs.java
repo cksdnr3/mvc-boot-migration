@@ -1,5 +1,6 @@
-package com.example.api.bug.domain;
+package com.example.api.bugs.domain;
 
+import com.example.api.board.domain.Board;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -28,4 +29,7 @@ public class Bugs {
 
     @Column(length = 20, nullable = false)
     private String album;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "board") private Board board;
 }
