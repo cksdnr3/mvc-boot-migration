@@ -15,7 +15,7 @@ import java.util.List;
 public class UserController {
 
     @GetMapping("/all")
-    public ResponseEntity<UserVO> all(@RequestBody UserVO user) {
+    public ResponseEntity<UserVO> all() {
         log.info("For All user");
 
         return ResponseEntity.ok(null);
