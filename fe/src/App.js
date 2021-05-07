@@ -6,6 +6,7 @@ import { Login, MyPage, Signup} from 'users/index'
 import 'App.css';
 import { Route } from 'react-router-dom'
 import { Todo, TodosApp, Todos } from 'todos'
+import UserList from 'users/component/UserList'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
       <Route exact path='/user/login' component={Login} />
       <Route exact path='/user/signup' component={Signup} />
       <Route exact path='/user/Mypage' component={MyPage} />
+      <Route exact path='/user/user-list' component={UserList} />
 
       <Route exact path='/todos/todo' component={ Todo } />
       <Route exact path='/todos/todos' component={ Todos } />

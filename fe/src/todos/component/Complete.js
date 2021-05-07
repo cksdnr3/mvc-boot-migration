@@ -6,7 +6,7 @@ const Completed = () => {
 
     const completes = useSelector(state => state.todosReducer.complete)
     const dispatch = useDispatch()
-    
+    console.log("completes: " + completes)
     return (
         <>
             <h3>Compconsted</h3>

@@ -1,15 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 import uuid from 'uuid/v4'
 
-const initialState = {
-    todos: [],
-    complete: []
-}
-
 // add, find, edit, del
 const todosSlice = createSlice({
     name: 'todos',
-    initialState,
+    initialState: {
+        todos: [],
+        complete: []
+    },
     reducers: {
         addTodo(state, {payload}) {
             state.todos.push({ id: uuid(), text: payload, done: false })

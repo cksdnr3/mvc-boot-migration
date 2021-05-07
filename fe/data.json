@@ -1,0 +1,44 @@
+{
+  "users": [
+      {
+          "username": "cksdnr3",
+          "password": "$2a$10$X8uZlhm/zBTq8/O9dWHdvOWiQIL2XNTbzAjC.wBPVYiB4SlLaG9IC",
+          "email": "cksdnr3333@gmail.com",
+          "name": "노찬욱",
+          "roles": [],
+          "token": null
+      },
+      {
+          "username": "cksdnr2",
+          "password": "$2a$10$JchXvguxwhnMD6lqMOhedeKxjKZNAi0ZjtCwGY1HvwuZ110vzSeaq",
+          "email": "cksdnr3333@gsmail.com",
+          "name": "노찬",
+          "roles": [],
+          "token": null
+      },
+      {
+          "username": "cks",
+          "password": "$2a$10$LxcTWp0/HrqvaziJct/9HO9RWV3hilHN7xcw/AwAEuXIOwi/eMrAq",
+          "email": "2",
+          "name": "1",
+          "roles": [],
+          "token": null
+      },
+      {
+          "username": "cks12",
+          "password": "$2a$10$BCjaGimBo7wh5sOH6r4XBOScO2CgJOHDbDbhQI5lH70lD4XO00kwq",
+          "email": "cksdnr3",
+          "name": "cksdnr3",
+          "roles": [],
+          "token": null
+      },
+      {
+          "username": "11231231",
+          "password": "$2a$10$CU8CGHXxpSHbh.S.yOxZp.NSoZS7HMhEGW/ahYx5HXT8ID19T7H.i",
+          "email": "12",
+          "name": "2313",
+          "roles": [],
+          "token": null
+      }
+  ]
+}

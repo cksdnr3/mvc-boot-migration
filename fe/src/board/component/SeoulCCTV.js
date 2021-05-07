@@ -8,10 +8,6 @@ import axios from 'axios'
 
 const SeoulCCTV = () => {
   const [cctvs, setCctvs] = useState([])
-  const [a, setA] = useState("A")
-  const [b, setB] = useState("B")
-  
-  console.log("lexical cctvs: " + JSON.stringify(cctvs))
 
   const getCctvs = () => {
     axios.get('/data/SeoulCCTV.json')

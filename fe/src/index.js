@@ -1,21 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'index.css';
 import App from 'App';
 import reportWebVitals from 'reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'
-import { combineReducers } from 'redux'
-import { configureStore } from '@reduxjs/toolkit';
-import todosReducer from 'todos/reducer/todos.slice'
-
-const rootReducer = combineReducers({
-  todosReducer
-})
-
-const store = configureStore({
-  reducer: rootReducer
-})
+import store from 'store/index'
 
 ReactDOM.render((
   <Provider store={store}>

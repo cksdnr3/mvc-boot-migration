@@ -11,13 +11,7 @@ const MyPage = (props) => {
     }, [user])
 
     const getDetail = () => {
-        axios.get(`http://localhost:8080/users/${props.match.params.username}`)
-        .then(res => {
-            setUser(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-        })
+
     }
 
     const doModify = () => {

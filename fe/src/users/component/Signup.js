@@ -1,73 +1,64 @@
 import React, { useCallback, useState } from 'react'
-import axios from 'axios'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css';
+import { useDispatch } from 'react-redux';
+import { signup } from 'users/reducer/user.reducer'
 
 const Signup = (props) => {
-    const [birthday, setBirthday] = useState(new Date());
+    const dispatch = useDispatch();
+    
+    // const [birthday, setBirthday] = useState(new Date());
     const [inputs, setInputs] = useState({
         username: "",
         password: "",
-        realName: "",
+        name: "",
         email: "",
-        gender: "man",
-        phoneNumber: "",
-        birthday
+        // gender: "man",
+        // phoneNumber: "",
+        // birthday,
     })
 
-    const {username, password, realName, 
-        email, gender, phoneNumber} = inputs
-
     const onChange = useCallback(e => {
-        setInputs({...inputs, [e.target.name]: e.target.value})
+        setInputs({
+            ...inputs, [e.target.name]: e.target.value
+        })
     }, [inputs])
-
-    const signup = () => {
-        axios.post(`http://localhost:8080/users/signup`, inputs)
-        .then(res => {
-            alert(res.data)
-            if (res.data.indexOf("success") == -1) {
-                props.history.push("/signup")
-            } else {
-                props.history.push("/")
-            }
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }
 
     return (
         <>
         <h2>Signup</h2>
-        <form onSubmit={ e => e.preventDefault() }>
+        <form onSubmit={ e => {
+            e.preventDefault()
+            dispatch(signup(inputs))
+            props.history.push("/")
+        } }>
             <label>ID:
-                <input type="text" name="username" value={username} onChange={onChange} />
+                <input type="text" name="username" value={inputs.username} onChange={onChange} />
             </label><br/>
             <label>Password:
-                <input type="password" name="password" value={password} onChange={onChange} />
+                <input type="password" name="password" value={inputs.password} onChange={onChange} />
             </label><br/>
             <label>Name:
-                <input type="text" name="realName" value={realName} onChange={onChange} />
+                <input type="text" name="name" value={inputs.name} onChange={onChange} />
             </label><br/>
             <label>E-mail:
-                <input type="text" name="email" value={email} onChange={onChange} />
+                <input type="text" name="email" value={inputs.email} onChange={onChange} />
             </label><br/>
-            <label>Phone Number:
-                <input type="text" name="phoneNumber" value={phoneNumber} onChange={onChange} />
+            {/* <label>Phone Number:
+                <input type="text" name="phoneNumber" value={inputs.phoneNumber} onChange={onChange} />
             </label><br/>
             <label>Birthday:
-            <DatePicker selected={birthday} onChange={date => setBirthday(date)} 
+            <DatePicker selected={inputs.birthday} onChange={date => setBirthday(date)} 
                         className="input-datepicker" dateFormat="yyyy-MM-dd" />
             </label><br/>
             <label>Gender:
-                <select name="gender" value={gender} onChange={onChange}>
+                <select name="gender" value={inputs.gender} onChange={onChange}>
                     <option value="man">Man</option>
                     <option value="woman">Woman</option>
                 </select>
-            </label><br/>
+            </label><br/> */}
 
-            <button type="submit" onClick={signup} >signup</button>
+            <button type="submit">signup</button>
         </form>
         </>
     )
