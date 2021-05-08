@@ -23,7 +23,7 @@ const Signup = (props) => {
             ...inputs, [e.target.name]: e.target.value
         })
     }, [inputs])
-
+asdasda
     return (
         <>
         <h2>Signup</h2>
