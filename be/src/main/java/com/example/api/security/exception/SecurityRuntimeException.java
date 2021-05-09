@@ -1,15 +1,14 @@
 package com.example.api.security.exception;
 
-import java.io.Serializable;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 
-public class LoginRuntimeException extends RuntimeException {
+@Getter
+@RequiredArgsConstructor
+public class SecurityRuntimeException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
-    public LoginRuntimeException() {
-        super(ErrorCode.LOGIN_FAILED.getMessage());
-    }
-
-    public LoginRuntimeException(String message) {
-        super(message);
-    }
+    private final String message;
+    private final HttpStatus httpStatus;
 }

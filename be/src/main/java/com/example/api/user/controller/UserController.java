@@ -1,27 +1,57 @@
 package com.example.api.user.controller;
 
 import com.example.api.news.domain.News;
+import com.example.api.user.domain.UserDTO;
 import com.example.api.user.domain.UserVO;
+import com.example.api.user.service.UserServiceImpl;
+import io.swagger.annotations.*;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 
 @Log
+@Api(tags = "users")
 @RestController
 @RequestMapping("/users")
+@RequiredArgsConstructor
+@CrossOrigin("*")
 public class UserController {
+    private final UserServiceImpl service;
+    private final ModelMapper modelMapper;
 
-    @GetMapping("/all")
-    public ResponseEntity<UserVO> all() {
-        log.info("For All user");
+    @PostMapping("/signup")
+    @ApiOperation(value = "${UserController.signup}")
+    @ApiResponses(value = {
+            @ApiResponse(code = 400, message = "Something went wrong"),
+            @ApiResponse(code = 403, message = "Access Denied"),
+            @ApiResponse(code = 422, message = "Username is already in use")})
+    public ResponseEntity<String> signup(@ApiParam("signup user") @RequestBody UserDTO userDTO) {
 
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(service.signup(modelMapper.map(userDTO, UserVO.class)));
     }
 
-    @GetMapping("/{username}")
+    @PostMapping("/signin")
+    @ApiOperation(value = "${UserController.signin}")
+    @ApiResponses(value = {
+            @ApiResponse(code = 400, message = "Something went wrong"),
+            @ApiResponse(code = 422, message = "Invalid Username . Password supplied")})
+    public ResponseEntity<UserDTO> signin(@ApiParam("signin user") @RequestBody UserDTO userDTO) {
+
+        return ResponseEntity.ok(service.signin(modelMapper.map(userDTO, UserVO.class)));
+    }
+
+    @GetMapping("/findAll")
+    public ResponseEntity<List<UserVO>> findAll() {
+        log.info("For All user");
+
+        return ResponseEntity.ok(service.findAll());
+    }
+
+    @PostMapping("/{username}")
     public ResponseEntity<UserVO> auth(@PathVariable String username) {
         log.info("For login user");
 
@@ -35,22 +65,4 @@ public class UserController {
         return ResponseEntity.ok(null);
     }
 
-
-    @PostMapping("")
-    public ResponseEntity<List<UserVO>> fetch(@RequestBody UserVO user) throws IOException {
-
-        return ResponseEntity.ok(null);
-    }
-
-    @PutMapping("")
-    public ResponseEntity<Long> update(@RequestBody UserVO user) {
-
-        return ResponseEntity.ok(null);
-    }
-
-    @DeleteMapping("")
-    public ResponseEntity<Long> delete(@RequestBody UserVO user) {
-
-        return ResponseEntity.ok(null);
-    }
 }

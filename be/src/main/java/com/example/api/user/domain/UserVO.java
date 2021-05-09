@@ -1,27 +1,24 @@
 package com.example.api.user.domain;
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.util.List;
+
+@Data
 @Table(name = "users")
 @Entity
 public class UserVO {
-
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue()
     @Column(name = "user_id") private long userId;
+    @Column(unique = true, nullable = false) private String username;
+    @Column(unique = true, nullable = false) private String email;
+    @Size(min = 8, message = "Minimum password length: 8")
+    @Column(nullable = false) private String password;
+    @Column(nullable = false) private String name;
 
-    @Column(name = "username") private String username;
-
-    @Column(name = "password") private String password;
-
-    @Column(name = "name") private String name;
-
-    @Column(name = "email") private String email;
-
-    @Column(name = "birthday") private String birthday;
-
-    @Column(name = "gender") private String gender;
-
-    @Column(name = "reg_date") private String regDate;
-
-    @Column(name = "phone_number") private String phoneNumber;
+    @ElementCollection(fetch = FetchType.EAGER)
+    List<Role> roles;
 }
