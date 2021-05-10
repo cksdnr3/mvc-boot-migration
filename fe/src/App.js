@@ -2,7 +2,7 @@ import Home from 'common/component/Home'
 import {ArticleList, ArticleWrite, ArticleDetail, ArticleUpdate} from 'article/index'
 import {News, SeoulCCTV } from 'board/index'
 import { Counter, ReduxCounter } from 'counter/index'
-import { Login, MyPage, Signup} from 'users/index'
+import { Login, MyPage, SignupForm } from 'users/index'
 import 'App.css';
 import { Route } from 'react-router-dom'
 import { Todo, TodosApp, Todos } from 'todos'
@@ -25,7 +25,7 @@ const App = () => {
       <Route exact path='/counter/redux-counter' component={ ReduxCounter } />
 
       <Route exact path='/user/login' component={Login} />
-      <Route exact path='/user/signup' component={Signup} />
+      <Route exact path='/user/signup' component={SignupForm} />
       <Route exact path='/user/Mypage' component={MyPage} />
       <Route exact path='/user/user-list' component={UserList} />
 

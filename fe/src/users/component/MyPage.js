@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { getDetail, userDelete, userEdit } from 'users/reducer/user.reducer'
 
 const MyPage = (props) => {
     const [user, setUser] = useState({})
@@ -10,35 +12,10 @@ const MyPage = (props) => {
         })
     }, [user])
 
-    const getDetail = () => {
+    const dispatch = useDispatch()
 
-    }
 
-    const doModify = () => {
-        axios.put(`http://localhost:8080/users/${props.match.params.username}`, user)
-        .then(res => {
-            setUser(res.data)
-            localStorage.clear()
-            localStorage.setItem("0", res.data)
-            getDetail();
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }
-
-    const doDelete = () => {  
-        if(window.confirm("Delete to confirm")) {
-            axios.delete(`http://localhost:8080/users/${props.match.params.username}`)
-            .then(res => {
-                alert(res.data)
-                localStorage.clear()
-                props.history.push('/')
-            })
-        }
-    }
-
-    useEffect(() => getDetail(), [])
+    // useEffect(() => getDetail(), [])
 
     return (
         <>
@@ -65,10 +42,21 @@ const MyPage = (props) => {
             <label>PhoneNumber:
                 <input type="text" name="phoneNumber" value={user.phoneNumber || ""} onChange={onChange} />
             </label><br/>
-            <button type="submit" onClick={doModify}>modify</button>
-            <button onClick={doDelete}>delete</button>
+            <button type="submit" onClick={() => {
+                const del = window.confirm("정보를 수정하시겠습니까?")
+                if (del) {
+                    dispatch(userEdit({
+                        data: user,
+                        headers: {'Content-Type':'application/json','Authorization': 'Bearer ' + localStorage.getItem("token")}
+                        }))}}}>modify</button>
+            <button onClick={() => {
+                const del = window.confirm("정말 탈퇴하시겠습니까?")
+                if (del) {
+                    dispatch(userDelete({
+                        username: user.username,
+                        headers: {'Content-Type':'application/json','Authorization': 'Bearer ' + localStorage.getItem("token")}
+                        }))}}}>delete</button>
         </form>
-        
         </>
     )
 }
